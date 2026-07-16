@@ -1,0 +1,36 @@
+{
+  "key": "gad7",
+  "version": "1.0",
+  "language": "en",
+  "title": "Generalized Anxiety Disorder scale (GAD-7)",
+  "instructions": "Over the last 2 weeks, how often have you been bothered by the following problems?",
+  "scale": [
+    { "value": 0, "label": "Not at all" },
+    { "value": 1, "label": "Several days" },
+    { "value": 2, "label": "More than half the days" },
+    { "value": 3, "label": "Nearly every day" }
+  ],
+  "items": [
+    { "id": 1, "text": "Feeling nervous, anxious, or on edge" },
+    { "id": 2, "text": "Not being able to stop or control worrying" },
+    { "id": 3, "text": "Worrying too much about different things" },
+    { "id": 4, "text": "Trouble relaxing" },
+    { "id": 5, "text": "Being so restless that it is hard to sit still" },
+    { "id": 6, "text": "Becoming easily annoyed or irritable" },
+    { "id": 7, "text": "Feeling afraid, as if something awful might happen" }
+  ],
+  "scoring": {
+    "method": "sum",
+    "bands": [
+      { "min": 0, "max": 4, "key": "minimal", "label": "Minimal anxiety symptoms" },
+      { "min": 5, "max": 9, "key": "mild", "label": "Mild anxiety symptoms" },
+      { "min": 10, "max": 14, "key": "moderate", "label": "Moderate anxiety symptoms" },
+      { "min": 15, "max": 21, "key": "severe", "label": "Severe anxiety symptoms" }
+    ],
+    "alerts": []
+  },
+  "recommended_rescreen_days": 14,
+  "source": "GAD-7, Spitzer RL, Kroenke K, Williams JB, Löwe B. Arch Intern Med 2006;166(10):1092-1097. Public-domain instrument (Pfizer).",
+  "source_verification": "Operator must cross-check item text against the official GAD-7 form before beta (spec §16 #3).",
+  "placeholder": false
+}

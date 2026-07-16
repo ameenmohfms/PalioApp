@@ -95,6 +95,16 @@ export default function Chat() {
       style={styles.screen}
       behavior={Platform.OS === "ios" ? "padding" : undefined}
     >
+      <View style={styles.header}>
+        <Text style={styles.headerTitle}>{t("app.name")}</Text>
+        <Pressable
+          accessibilityRole="button"
+          onPress={() => router.push("/screening")}
+          style={styles.headerLink}
+        >
+          <Text style={styles.headerLinkText}>{t("screening.openList")}</Text>
+        </Pressable>
+      </View>
       {showResources && (
         <Pressable
           style={styles.resourcesBanner}
@@ -150,6 +160,19 @@ export default function Chat() {
 
 const styles = StyleSheet.create({
   screen: { flex: 1, backgroundColor: colors.background },
+  header: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.xl,
+    paddingBottom: spacing.sm,
+    borderBottomWidth: 1,
+    borderBottomColor: colors.border,
+  },
+  headerTitle: { fontSize: 18, fontWeight: "600", color: colors.textPrimary },
+  headerLink: { padding: spacing.xs },
+  headerLinkText: { fontSize: 15, color: colors.accent, fontWeight: "600" },
   resourcesBanner: {
     backgroundColor: colors.accentSoft,
     padding: spacing.md,

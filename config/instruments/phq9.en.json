@@ -1,0 +1,41 @@
+{
+  "key": "phq9",
+  "version": "1.0",
+  "language": "en",
+  "title": "Patient Health Questionnaire (PHQ-9)",
+  "instructions": "Over the last 2 weeks, how often have you been bothered by any of the following problems?",
+  "scale": [
+    { "value": 0, "label": "Not at all" },
+    { "value": 1, "label": "Several days" },
+    { "value": 2, "label": "More than half the days" },
+    { "value": 3, "label": "Nearly every day" }
+  ],
+  "items": [
+    { "id": 1, "text": "Little interest or pleasure in doing things" },
+    { "id": 2, "text": "Feeling down, depressed, or hopeless" },
+    { "id": 3, "text": "Trouble falling or staying asleep, or sleeping too much" },
+    { "id": 4, "text": "Feeling tired or having little energy" },
+    { "id": 5, "text": "Poor appetite or overeating" },
+    { "id": 6, "text": "Feeling bad about yourself — or that you are a failure or have let yourself or your family down" },
+    { "id": 7, "text": "Trouble concentrating on things, such as reading the newspaper or watching television" },
+    { "id": 8, "text": "Moving or speaking so slowly that other people could have noticed? Or the opposite — being so fidgety or restless that you have been moving around a lot more than usual" },
+    { "id": 9, "text": "Thoughts that you would be better off dead or of hurting yourself in some way" }
+  ],
+  "scoring": {
+    "method": "sum",
+    "bands": [
+      { "min": 0, "max": 4, "key": "minimal", "label": "Minimal depression symptoms" },
+      { "min": 5, "max": 9, "key": "mild", "label": "Mild depression symptoms" },
+      { "min": 10, "max": 14, "key": "moderate", "label": "Moderate depression symptoms" },
+      { "min": 15, "max": 19, "key": "moderately_severe", "label": "Moderately severe depression symptoms" },
+      { "min": 20, "max": 27, "key": "severe", "label": "Severe depression symptoms" }
+    ],
+    "alerts": [
+      { "item": 9, "min_value": 1, "event": "phq9_item9_positive" }
+    ]
+  },
+  "recommended_rescreen_days": 14,
+  "source": "Patient Health Questionnaire-9 (PHQ-9), Kroenke K, Spitzer RL, Williams JB. J Gen Intern Med 2001;16(9):606-613. Public-domain instrument (Pfizer).",
+  "source_verification": "Operator must cross-check item text against the official PHQ-9 form before beta (spec §16 #3).",
+  "placeholder": false
+}

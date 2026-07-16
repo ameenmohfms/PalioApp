@@ -18,6 +18,18 @@
     "sendError": "Couldn't send. Please try again.",
     "resourcesBanner": "If things feel heavy right now, real support is available — tap here to see support lines."
   },
+  "screening": {
+    "title": "Screenings",
+    "consentNote": "These are validated screening questionnaires, not a diagnosis. Results help you understand your pattern and prepare your next step with a professional if needed.",
+    "arPending": "The Arabic versions of these instruments are pending clinical verification. English versions are available now.",
+    "itemCount": "{{count}} items",
+    "loadError": "Couldn't load screenings right now.",
+    "resultTitle": "Your result",
+    "rescreen": "Re-taking this screening in about {{days}} days is recommended to track change.",
+    "backToChat": "Back to chat",
+    "pause": "Pause — you can come back later",
+    "openList": "Screenings"
+  },
   "crisis": {
     "title": "You are not alone",
     "notAlone": "What you're going through right now is serious and deserves real, human support.",

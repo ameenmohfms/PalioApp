@@ -1,0 +1,13 @@
+{
+  "key": "asrs_v1_1",
+  "version": "1.1",
+  "language": "ar",
+  "title": "مقياس التقرير الذاتي لاضطراب فرط الحركة وتشتت الانتباه للبالغين (ASRS-v1.1)",
+  "instructions": "",
+  "scale": [],
+  "items": [],
+  "scoring": null,
+  "recommended_rescreen_days": 56,
+  "source": "BLOCKING PLACEHOLDER (spec §16 #2): clinically verified Arabic translation must be supplied by the operator. Machine-drafted clinical instrument text is forbidden (Working Agreement 7); this file intentionally contains structure only.",
+  "placeholder": true
+}

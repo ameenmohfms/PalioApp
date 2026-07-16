@@ -15,6 +15,7 @@ from palio.routers import auth as auth_router
 from palio.routers import chat as chat_router
 from palio.routers import crisis as crisis_router
 from palio.routers import health
+from palio.routers import screeners as screeners_router
 from palio.safety import crisis_config
 
 log = structlog.get_logger()
@@ -24,6 +25,7 @@ log = structlog.get_logger()
 async def lifespan(app: FastAPI):
     settings = get_settings()
     app.state.crisis_verified = _validate_boot(settings)
+    _sync_instruments()
     log.info(
         "palio_api_started",
         app_env=settings.app_env,
@@ -47,6 +49,20 @@ def _validate_boot(settings: Settings) -> bool:
     return verified
 
 
+def _sync_instruments() -> None:
+    """Upsert versioned instrument files into the DB (Hard Rule A3)."""
+    from palio.assessments import loader
+    from palio.db.base import db_session
+
+    try:
+        with db_session() as session:
+            added = loader.sync_to_db(session)
+        if added:
+            log.info("instruments_synced", added=added)
+    except Exception as exc:  # noqa: BLE001 — DB may lag behind at boot; endpoints still guard
+        log.warning("instrument_sync_failed", error=str(exc))
+
+
 def create_app() -> FastAPI:
     app = FastAPI(
         title="Palio API",
@@ -58,6 +74,7 @@ def create_app() -> FastAPI:
     app.include_router(crisis_router.router)
     app.include_router(auth_router.router)
     app.include_router(chat_router.router)
+    app.include_router(screeners_router.router)
     return app
 
 

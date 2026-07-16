@@ -1,0 +1,13 @@
+{
+  "key": "gad7",
+  "version": "1.0",
+  "language": "ar",
+  "title": "مقياس اضطراب القلق العام (GAD-7)",
+  "instructions": "",
+  "scale": [],
+  "items": [],
+  "scoring": null,
+  "recommended_rescreen_days": 14,
+  "source": "BLOCKING PLACEHOLDER (spec §16 #2): clinically verified Arabic translation must be supplied by the operator. Machine-drafted clinical instrument text is forbidden (Working Agreement 7); this file intentionally contains structure only.",
+  "placeholder": true
+}
