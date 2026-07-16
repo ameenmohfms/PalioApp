@@ -8,7 +8,15 @@
     "disclosure": "Palio is an AI. It is not a clinician or therapist and does not diagnose. Do not rely on it in emergencies.",
     "adultAttestation": "I confirm that I am 18 years of age or older.",
     "languageLabel": "Language",
-    "continue": "Continue"
+    "continue": "Start chatting",
+    "nicknamePlaceholder": "What should I call you? (a nickname is enough)",
+    "startError": "We couldn't start right now. Check your connection and try again."
+  },
+  "chat": {
+    "inputPlaceholder": "Type here…",
+    "send": "Send",
+    "sendError": "Couldn't send. Please try again.",
+    "resourcesBanner": "If things feel heavy right now, real support is available — tap here to see support lines."
   },
   "crisis": {
     "title": "You are not alone",

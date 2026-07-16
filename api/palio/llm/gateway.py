@@ -88,22 +88,26 @@ def _check_kill_switch(agent: str) -> None:
 
 
 def _log_usage(user_id: uuid.UUID | None, agent: str, result: LLMResult) -> None:
-    """Append to the llm_usage cost ledger (spec §5)."""
+    """Append to the llm_usage cost ledger (spec §5). Best-effort: a ledger
+    failure must never break the user's turn."""
     if user_id is None:
         return
     from palio.db.base import db_session
     from palio.db.models import LlmUsage
 
-    with db_session() as session:
-        session.add(
-            LlmUsage(
-                user_id=user_id,
-                agent=agent,
-                model=result.model,
-                input_tokens=result.input_tokens,
-                output_tokens=result.output_tokens,
+    try:
+        with db_session() as session:
+            session.add(
+                LlmUsage(
+                    user_id=user_id,
+                    agent=agent,
+                    model=result.model,
+                    input_tokens=result.input_tokens,
+                    output_tokens=result.output_tokens,
+                )
             )
-        )
+    except Exception as exc:  # noqa: BLE001
+        log.warning("llm_usage_log_failed", agent=agent, error=str(exc))
 
 
 def check_budget(user_id: uuid.UUID | None) -> None:
@@ -158,6 +162,8 @@ def complete(
 
     import anthropic
 
+    if not settings.anthropic_api_key:
+        raise LLMError("ANTHROPIC_API_KEY is not configured")
     client = anthropic.Anthropic(api_key=settings.anthropic_api_key, timeout=REQUEST_TIMEOUT_S)
     last_err: Exception | None = None
     for attempt in range(1 + MAX_RETRIES):

@@ -12,11 +12,13 @@ from enum import StrEnum
 
 from pgvector.sqlalchemy import Vector
 from sqlalchemy import (
+    BigInteger,
     Boolean,
     DateTime,
     Enum,
     Float,
     ForeignKey,
+    Identity,
     Index,
     Integer,
     String,
@@ -172,6 +174,9 @@ class Message(Base):
     __tablename__ = "messages"
 
     id: Mapped[uuid.UUID] = _uuid_pk()
+    # Monotonic ordering within a conversation; created_at is transaction-time
+    # in Postgres, so both sides of one turn share it.
+    seq: Mapped[int] = mapped_column(BigInteger, Identity(), unique=True)
     session_id: Mapped[uuid.UUID] = mapped_column(
         ForeignKey("sessions.id", ondelete="CASCADE"), index=True
     )
@@ -429,3 +434,17 @@ class LlmUsage(Base):
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), server_default=func.now(), nullable=False, index=True
     )
+
+
+class AuthOtp(Base):
+    """Email OTP codes (hashed; short TTL; attempt-capped)."""
+
+    __tablename__ = "auth_otp"
+
+    id: Mapped[uuid.UUID] = _uuid_pk()
+    email: Mapped[str] = mapped_column(String(255), index=True)
+    code_hash: Mapped[str] = mapped_column(String(64))  # sha256 hex
+    expires_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+    attempts: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
+    consumed: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
+    created_at: Mapped[datetime] = _created_at()

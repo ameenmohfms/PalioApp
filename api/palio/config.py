@@ -25,6 +25,12 @@ class Settings(BaseSettings):
     palio_model_fast: str = "claude-haiku-4-5"
     palio_model_main: str = "claude-sonnet-5"
 
+    # Auth. jwt_secret MUST be set in production (boot gate in main._validate_boot).
+    jwt_secret: str = "dev-only-not-a-secret"
+    jwt_ttl_hours: int = 24 * 30
+    google_client_id: str = ""
+    otp_ttl_minutes: int = 10
+
     palio_daily_token_budget_per_user: int = 200_000
 
     # Paths to operator-controlled assets. In Docker these are mounted at

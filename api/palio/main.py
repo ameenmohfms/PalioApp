@@ -11,6 +11,8 @@ import structlog
 from fastapi import FastAPI
 
 from palio.config import Settings, get_settings
+from palio.routers import auth as auth_router
+from palio.routers import chat as chat_router
 from palio.routers import crisis as crisis_router
 from palio.routers import health
 from palio.safety import crisis_config
@@ -32,7 +34,9 @@ async def lifespan(app: FastAPI):
 
 
 def _validate_boot(settings: Settings) -> bool:
-    """Boot gates. Raises CrisisConfigError (=> no boot) on N8 violation."""
+    """Boot gates. Raises (=> no boot) on N8 violation or insecure prod auth."""
+    if settings.is_production and settings.jwt_secret == "dev-only-not-a-secret":
+        raise RuntimeError("REFUSING TO BOOT: JWT_SECRET must be set in production")
     verified = crisis_config.validate_at_boot(settings)
     if not verified:
         log.warning(
@@ -52,6 +56,8 @@ def create_app() -> FastAPI:
     )
     app.include_router(health.router)
     app.include_router(crisis_router.router)
+    app.include_router(auth_router.router)
+    app.include_router(chat_router.router)
     return app
 
 
