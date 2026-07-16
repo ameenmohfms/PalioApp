@@ -2,6 +2,7 @@
 
 from enum import StrEnum
 from functools import lru_cache
+from pathlib import Path
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -26,10 +27,19 @@ class Settings(BaseSettings):
 
     palio_daily_token_budget_per_user: int = 200_000
 
-    # Paths to operator-controlled assets (mounted read-only in Docker).
-    config_dir: str = "/config"
-    prompts_dir: str = "/prompts"
-    content_dir: str = "/content"
+    # Paths to operator-controlled assets. In Docker these are mounted at
+    # /config etc.; running from source they resolve to the repo directories.
+    config_dir: str = ""
+    prompts_dir: str = ""
+    content_dir: str = ""
+
+    def model_post_init(self, __context) -> None:
+        repo_root = Path(__file__).resolve().parents[2]
+        for attr, mount in (("config_dir", "/config"), ("prompts_dir", "/prompts"),
+                            ("content_dir", "/content")):
+            if not getattr(self, attr):
+                candidate = mount if Path(mount).is_dir() else str(repo_root / mount.strip("/"))
+                object.__setattr__(self, attr, candidate)
 
     # N8 escape hatch for development only; refused in production (see safety.crisis_config).
     allow_unverified_crisis_config: bool = False

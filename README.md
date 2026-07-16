@@ -26,6 +26,9 @@ Requirements: Docker + Docker Compose, Node 22, uv (or any Python 3.12 toolchain
 
 ```bash
 cp .env.example .env          # fill ANTHROPIC_API_KEY for LLM features
+# Dev only: the repo ships PLACEHOLDER crisis resources, so the API refuses
+# to boot (Hard Rule N8) until you explicitly acknowledge dev mode:
+echo "ALLOW_UNVERIFIED_CRISIS_CONFIG=1" >> .env
 docker compose up --build     # db (pgvector) + api (:8000) + worker
 curl localhost:8000/healthz   # {"status":"ok"}
 ```

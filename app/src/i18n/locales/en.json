@@ -10,6 +10,18 @@
     "languageLabel": "Language",
     "continue": "Continue"
   },
+  "crisis": {
+    "title": "You are not alone",
+    "notAlone": "What you're going through right now is serious and deserves real, human support.",
+    "aiHonesty": "Palio is an AI and cannot call anyone for you — but the numbers here connect you to real people who can help.",
+    "emergencyNow": "If your life is in immediate danger, call emergency services now.",
+    "unverifiedBanner": "Development build: these resources are NOT yet verified and must not ship.",
+    "callLabel": "Call {{name}}",
+    "noLinesFallback": "No saved local numbers are available right now. If you are in danger, call your country's emergency number or go to the nearest hospital emergency room.",
+    "back": "Back",
+    "helpAffordance": "Need urgent help?",
+    "helpAffordanceLabel": "Open the urgent help screen"
+  },
   "common": {
     "loading": "Loading…"
   }

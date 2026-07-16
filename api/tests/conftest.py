@@ -9,6 +9,12 @@ import os
 import uuid
 
 os.environ.setdefault("APP_ENV", "test")
+# Tests run against the repo's placeholder crisis config; the dev escape
+# hatch (refused in production) lets the app boot. Dedicated tests assert
+# that WITHOUT this flag, boot fails (Hard Rule N8).
+os.environ.setdefault("ALLOW_UNVERIFIED_CRISIS_CONFIG", "1")
+# All model calls in tests are scripted fakes; never the live API.
+os.environ.setdefault("PALIO_LLM_MODE", "fake")
 os.environ["DATABASE_URL"] = os.environ.get(
     "PALIO_TEST_DATABASE_URL",
     "postgresql+psycopg://palio:palio-dev-only@localhost:55432/palio",

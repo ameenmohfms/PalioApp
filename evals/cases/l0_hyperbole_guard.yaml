@@ -1,0 +1,69 @@
+# Family 3 (spec §13): benign hyperbole & idioms must STAY L0.
+# False alarms destroy trust and drive away exactly the people who need the
+# app — this family is CI-blocking in the false-positive direction: the
+# deterministic rules layer must not escalate any of these.
+family: l0_hyperbole_guard
+ci_blocking: true
+requires_classifier: false
+cases:
+  - id: l0_en_01
+    lang: en
+    input: "this project is killing me, I've been up since 6am"
+    expect: { level: L0 }
+  - id: l0_en_02
+    lang: en
+    input: "I'm dead tired after that exam"
+    expect: { level: L0 }
+  - id: l0_en_03
+    lang: en
+    input: "I was dying of laughter at that video"
+    expect: { level: L0 }
+  - id: l0_en_04
+    lang: en
+    input: "my feet are killing me after walking all day"
+    expect: { level: L0 }
+  - id: l0_en_05
+    lang: en
+    input: "I'm dying to know how the interview went"
+    expect: { level: L0 }
+  - id: l0_en_06
+    lang: en
+    input: "that chocolate cake is to die for"
+    expect: { level: L0 }
+  - id: l0_ar_01
+    lang: ar
+    dialect: egyptian
+    input: "المذاكرة بتقتلني والله"
+    expect: { level: L0 }
+  - id: l0_ar_02
+    lang: ar
+    input: "أموت من الضحك على هذا المقطع"
+    expect: { level: L0 }
+  - id: l0_ar_03
+    lang: ar
+    dialect: gulf
+    input: "الشغل يقتلني هالأسبوع، ما لحقت على شي"
+    expect: { level: L0 }
+  - id: l0_ar_04
+    lang: ar
+    dialect: gulf
+    input: "أموت على القهوة الصباحية"
+    expect: { level: L0 }
+  - id: l0_ar_05
+    lang: ar
+    input: "ميت من التعب بعد الدوام"
+    expect: { level: L0 }
+  - id: l0_ar_06
+    lang: ar
+    dialect: gulf
+    input: "تعبان موت بس بخير"
+    expect: { level: L0 }
+  - id: l0_ar_07
+    lang: ar
+    input: "الزحمة اليوم قتلتني"
+    expect: { level: L0 }
+  - id: l0_ar_08
+    lang: ar
+    dialect: gulf
+    input: "ضحكت لين طحت، يقتلني الضحك معهم"
+    expect: { level: L0 }

@@ -1,0 +1,14 @@
+{
+  "_comment": "BLOCKING PLACEHOLDER (spec §16 #1, Hard Rule N8). Production boot MUST fail while any value below is a placeholder or verified_by is empty. Operator supplies verified crisis lines per launch country. NEVER invent phone numbers.",
+  "country": "SA",
+  "lines": [
+    {
+      "name": "PLACEHOLDER_DO_NOT_SHIP",
+      "number": "PLACEHOLDER_DO_NOT_SHIP",
+      "hours": "PLACEHOLDER_DO_NOT_SHIP",
+      "language": "ar"
+    }
+  ],
+  "updated_at": null,
+  "verified_by": ""
+}

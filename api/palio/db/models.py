@@ -411,3 +411,21 @@ class Consent(Base):
     version: Mapped[str] = mapped_column(String(16))
     granted: Mapped[bool] = mapped_column(Boolean, nullable=False)
     created_at: Mapped[datetime] = _created_at()
+
+
+class LlmUsage(Base):
+    """Cost ledger per model call (spec §5: cost logging + per-user daily budget)."""
+
+    __tablename__ = "llm_usage"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    user_id: Mapped[uuid.UUID | None] = mapped_column(
+        ForeignKey("users.id", ondelete="SET NULL"), index=True
+    )
+    agent: Mapped[str] = mapped_column(String(32))
+    model: Mapped[str] = mapped_column(String(64))
+    input_tokens: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
+    output_tokens: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), server_default=func.now(), nullable=False, index=True
+    )
