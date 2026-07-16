@@ -1,0 +1,16 @@
+{
+  "app": {
+    "name": "Palio"
+  },
+  "welcome": {
+    "title": "Welcome to Palio",
+    "tagline": "Your companion for understanding focus and self-organization — one step at a time.",
+    "disclosure": "Palio is an AI. It is not a clinician or therapist and does not diagnose. Do not rely on it in emergencies.",
+    "adultAttestation": "I confirm that I am 18 years of age or older.",
+    "languageLabel": "Language",
+    "continue": "Continue"
+  },
+  "common": {
+    "loading": "Loading…"
+  }
+}

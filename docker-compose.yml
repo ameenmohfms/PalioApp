@@ -1,0 +1,64 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-palio}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-palio-dev-only}
+      POSTGRES_DB: ${POSTGRES_DB:-palio}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-palio} -d ${POSTGRES_DB:-palio}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    ports:
+      - "127.0.0.1:5432:5432"
+
+  api:
+    build: ./api
+    command: >
+      sh -c "alembic upgrade head &&
+             uvicorn palio.main:app --host 0.0.0.0 --port 8000"
+    environment:
+      APP_ENV: ${APP_ENV:-development}
+      DATA_REGION: ${DATA_REGION:-dev-local}
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-palio}:${POSTGRES_PASSWORD:-palio-dev-only}@db:5432/${POSTGRES_DB:-palio}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      ALLOW_UNVERIFIED_CRISIS_CONFIG: ${ALLOW_UNVERIFIED_CRISIS_CONFIG:-0}
+    volumes:
+      - ./config:/config:ro
+      - ./prompts:/prompts:ro
+      - ./content:/content:ro
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:8000:8000"
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request;urllib.request.urlopen('http://localhost:8000/healthz')\""]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+
+  worker:
+    build: ./api
+    command: python -m palio.jobs.worker
+    environment:
+      APP_ENV: ${APP_ENV:-development}
+      DATA_REGION: ${DATA_REGION:-dev-local}
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-palio}:${POSTGRES_PASSWORD:-palio-dev-only}@db:5432/${POSTGRES_DB:-palio}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      ALLOW_UNVERIFIED_CRISIS_CONFIG: ${ALLOW_UNVERIFIED_CRISIS_CONFIG:-0}
+    volumes:
+      - ./config:/config:ro
+      - ./prompts:/prompts:ro
+      - ./content:/content:ro
+    depends_on:
+      db:
+        condition: service_healthy
+      api:
+        condition: service_healthy
+
+volumes:
+  pgdata:

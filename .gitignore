@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+
+# Node / Expo
+node_modules/
+.expo/
+.expo-shared/
+web-build/
+*.tsbuildinfo
+
+# Env & secrets
+.env
+.env.local
+*.pem
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Generated artifacts
+reports_out/

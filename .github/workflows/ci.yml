@@ -1,0 +1,68 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  api:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: palio
+          POSTGRES_PASSWORD: palio-dev-only
+          POSTGRES_DB: palio
+        ports: ["55432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U palio -d palio"
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 10
+    defaults:
+      run:
+        working-directory: api
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v4
+      - name: Install
+        run: |
+          uv venv --python 3.12 .venv
+          uv pip install -p .venv/bin/python -e . --group dev
+      - name: Lint
+        run: .venv/bin/ruff check palio tests migrations
+      - name: Typecheck
+        run: .venv/bin/mypy palio
+      - name: Migrate
+        run: .venv/bin/alembic upgrade head
+        env:
+          DATABASE_URL: postgresql+psycopg://palio:palio-dev-only@localhost:55432/palio
+          APP_ENV: test
+      - name: Test
+        run: .venv/bin/pytest -q
+        env:
+          PALIO_TEST_DATABASE_URL: postgresql+psycopg://palio:palio-dev-only@localhost:55432/palio
+          APP_ENV: test
+
+  app:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+      - name: Install
+        run: npm ci --legacy-peer-deps
+      - name: Lint
+        run: npm run lint -- --max-warnings 0
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Test
+        run: npm test -- --ci
