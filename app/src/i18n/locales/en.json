@@ -18,6 +18,26 @@
     "sendError": "Couldn't send. Please try again.",
     "resourcesBanner": "If things feel heavy right now, real support is available — tap here to see support lines."
   },
+  "patterns": {
+    "title": "My patterns & progress",
+    "openPatterns": "Patterns",
+    "suggestions": "I noticed these — accurate?",
+    "noticedPrefix": "Suggested observation",
+    "accurate": "Accurate ✓",
+    "notAccurate": "Not accurate",
+    "mapSection": "The map",
+    "empty": "Your map builds over time — after each session I'll suggest observations and you decide what goes on it.",
+    "trends": "Screening trends",
+    "delete": "Delete this observation",
+    "memoryPause": "Pause memory for this session",
+    "types": {
+      "win": "Wins",
+      "strength": "Strengths",
+      "strategy_outcome": "Strategy outcomes",
+      "trigger": "Triggers",
+      "context": "Contexts"
+    }
+  },
   "plan": {
     "title": "My plan",
     "openPlan": "My plan",

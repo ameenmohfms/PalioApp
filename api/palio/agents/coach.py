@@ -54,7 +54,9 @@ def generate(
     risk_level: RiskLevel,
 ) -> str:
     from palio.agents.companion import _history, _state_block  # shared helpers
+    from palio.orchestrator import context
 
+    pack = context.build(db, user, current_session_id=chat.id)
     system = (
         prompts.composed("coach")
         + "\n\n"
@@ -62,6 +64,8 @@ def generate(
         + "\n\n"
         + _context_block(db, user)
     )
+    if pack.text:
+        system += "\n\n" + pack.text
     messages = _history(db, chat) + [{"role": "user", "content": user_text}]
     result = gateway.complete(
         "coach",

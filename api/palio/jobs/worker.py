@@ -14,8 +14,16 @@ from palio.jobs import queue
 
 log = structlog.get_logger()
 
-# kind -> callable(session, job). Populated by later phases.
-HANDLERS: dict = {}
+def _pattern_extraction(session, job):
+    from palio.patterns import extractor
+
+    extractor.handle_job(session, job)
+
+
+# kind -> callable(session, job). Case Review registers in Phase 7.
+HANDLERS: dict = {
+    "pattern_extraction": _pattern_extraction,
+}
 
 POLL_SECONDS = 2.0
 _shutdown = False

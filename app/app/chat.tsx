@@ -6,12 +6,14 @@
 import { useRouter } from "expo-router";
 import { useEffect, useRef, useState } from "react";
 import {
+  AppState,
   FlatList,
   I18nManager,
   KeyboardAvoidingView,
   Platform,
   Pressable,
   StyleSheet,
+  Switch,
   Text,
   TextInput,
   View,
@@ -19,6 +21,7 @@ import {
 import { useTranslation } from "react-i18next";
 
 import { createSession, fetchHistory, sendMessage } from "../src/api/client";
+import { endSession, setSessionMemory } from "../src/api/patterns";
 import { revealSteps } from "../src/chat/reveal";
 import { isRTL } from "../src/i18n";
 import { colors, spacing, type } from "../src/theme/tokens";
@@ -35,7 +38,25 @@ export default function Chat() {
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
   const [showResources, setShowResources] = useState(false);
+  const [memoryPaused, setMemoryPaused] = useState(false);
   const listRef = useRef<FlatList<Bubble>>(null);
+
+  // Sessions end when the app goes to background; the Pattern Extractor
+  // runs then (unless memory is paused for this session).
+  useEffect(() => {
+    if (!sessionId) return;
+    const sub = AppState.addEventListener("change", (state) => {
+      if (state === "background") endSession(sessionId).catch(() => {});
+    });
+    return () => sub.remove();
+  }, [sessionId]);
+
+  async function toggleMemory() {
+    if (!sessionId) return;
+    const next = !memoryPaused;
+    setMemoryPaused(next);
+    setSessionMemory(sessionId, next).catch(() => setMemoryPaused(!next));
+  }
 
   useEffect(() => {
     let mounted = true;
@@ -100,6 +121,13 @@ export default function Chat() {
         <View style={styles.headerLinks}>
           <Pressable
             accessibilityRole="button"
+            onPress={() => router.push("/patterns")}
+            style={styles.headerLink}
+          >
+            <Text style={styles.headerLinkText}>{t("patterns.openPatterns")}</Text>
+          </Pressable>
+          <Pressable
+            accessibilityRole="button"
             onPress={() => router.push("/plan")}
             style={styles.headerLink}
           >
@@ -113,6 +141,10 @@ export default function Chat() {
             <Text style={styles.headerLinkText}>{t("screening.openList")}</Text>
           </Pressable>
         </View>
+      </View>
+      <View style={styles.memoryRow}>
+        <Text style={[styles.memoryText, rtl && styles.rtl]}>{t("patterns.memoryPause")}</Text>
+        <Switch value={memoryPaused} onValueChange={toggleMemory} />
       </View>
       {showResources && (
         <Pressable
@@ -182,6 +214,14 @@ const styles = StyleSheet.create({
   headerTitle: { fontSize: 18, fontWeight: "600", color: colors.textPrimary },
   headerLinks: { flexDirection: "row", gap: spacing.sm },
   headerLink: { padding: spacing.xs },
+  memoryRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.xs,
+  },
+  memoryText: { fontSize: 13, color: colors.textSecondary },
   headerLinkText: { fontSize: 15, color: colors.accent, fontWeight: "600" },
   resourcesBanner: {
     backgroundColor: colors.accentSoft,
