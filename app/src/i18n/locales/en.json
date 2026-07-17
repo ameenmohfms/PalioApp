@@ -18,6 +18,20 @@
     "sendError": "Couldn't send. Please try again.",
     "resourcesBanner": "If things feel heavy right now, real support is available — tap here to see support lines."
   },
+  "plan": {
+    "title": "My plan",
+    "openPlan": "My plan",
+    "checkinToggle": "One optional daily check-in reminder",
+    "activeSection": "My current strategies",
+    "noActive": "No active strategy yet — pick one from the library below.",
+    "librarySection": "Strategy library",
+    "tryThis": "Try this",
+    "helped": "Helped",
+    "partly": "Partly",
+    "didntHelp": "Didn't help",
+    "adapt": "Adapt & retry",
+    "swap": "Stop this one"
+  },
   "screening": {
     "title": "Screenings",
     "consentNote": "These are validated screening questionnaires, not a diagnosis. Results help you understand your pattern and prepare your next step with a professional if needed.",

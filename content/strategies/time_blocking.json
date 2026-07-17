@@ -1,0 +1,38 @@
+{
+  "key": "time_blocking",
+  "category": "time",
+  "requires_clinical_signoff": true,
+  "source_basis": "Time-management / EF coaching practice; evidence-informed.",
+  "en": {
+    "title": "Time blocks with honest buffers",
+    "summary": "Instead of a to-do list that ignores time, give each task a home on the calendar — and double the buffer you think you need, because time blindness is part of the pattern.",
+    "steps": [
+      "Each evening, pick tomorrow's 1–3 priority tasks (not ten).",
+      "Give each a calendar block, then add a buffer of 50% of its length.",
+      "Put transitions on the calendar too (\"close laptop, drink water, walk 2 min\").",
+      "When a block ends, stop or consciously re-book — don't silently overflow."
+    ],
+    "try_this_week": "Block tomorrow's top task with a 50% buffer and treat the block like a meeting with yourself.",
+    "adapt_if": [
+      "Blocks keep overflowing: double the buffer — the plan should match reality, not shame it.",
+      "Calendar feels rigid: block only mornings, keep afternoons free-range.",
+      "You ignore the calendar: pair each block with an alarm that has a label, not just a sound."
+    ]
+  },
+  "ar": {
+    "title": "تقسيم الوقت بهوامش صادقة",
+    "summary": "بدل قائمة مهام تتجاهل الوقت، أعطِ كل مهمة بيتاً في التقويم — وضاعف الهامش اللي تتوقعه، لأن «عمى الوقت» جزء من النمط.",
+    "steps": [
+      "كل مساء، اختر مهمة إلى ثلاث مهام أولوية ليوم الغد (ليس عشراً).",
+      "أعطِ كل مهمة مربعاً في التقويم، وأضف هامشاً بنسبة ٥٠٪ من مدتها.",
+      "ضع الانتقالات نفسها في التقويم («أسكّر اللابتوب، أشرب ماء، أمشي دقيقتين»).",
+      "إذا انتهى المربع: توقف أو أعد الحجز بوعي — لا تفض صامتاً على ما بعده."
+    ],
+    "try_this_week": "احجز مربعاً لمهمة الغد الأهم بهامش ٥٠٪ وعامل المربع كموعد مع نفسك.",
+    "adapt_if": [
+      "إذا استمرت المربعات تفيض: ضاعف الهامش — الخطة تطابق الواقع، لا تلومه.",
+      "إذا حسيت التقويم جامداً: قسّم الصباح فقط واترك المساء حراً.",
+      "إذا كنت تتجاهل التقويم: اربط كل مربع بمنبه له عنوان واضح، لا صوت فقط."
+    ]
+  }
+}

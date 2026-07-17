@@ -1,0 +1,38 @@
+{
+  "key": "deadline_scaffolding",
+  "category": "time",
+  "requires_clinical_signoff": true,
+  "source_basis": "Accountability / temporal-scaffolding coaching practice; evidence-informed.",
+  "en": {
+    "title": "Build fake deadlines that feel real",
+    "summary": "One far deadline is invisible until it's an emergency. Scaffolding means planting near, concrete milestones — and making at least one of them social, because promises to others fire harder than promises to self.",
+    "steps": [
+      "Take the real deadline and work backwards: define 2–4 milestones with dates.",
+      "Make each milestone a deliverable, not a vibe (\"outline sent\", not \"made progress\").",
+      "Tell one person about ONE milestone and ask them to expect it (\"I'll send you the draft Thursday\").",
+      "When a milestone lands, mark it visibly. When it slips, re-scaffold without self-attack — slipping is information."
+    ],
+    "try_this_week": "Pick one looming deadline, plant two milestones, and promise the first one to a person.",
+    "adapt_if": [
+      "No one to promise to: post the commitment somewhere you'd feel it (a group, Palio check-in).",
+      "Milestones keep slipping: they're too big — halve them.",
+      "Social pressure spikes anxiety: keep the milestone social but soften the frame (\"aiming for Thursday\")."
+    ]
+  },
+  "ar": {
+    "title": "سقالات المواعيد النهائية",
+    "summary": "الموعد النهائي البعيد غير مرئي حتى يصير طوارئ. السقالات تعني زرع محطات قريبة وملموسة — وجعل واحدة منها على الأقل اجتماعية، لأن الوعود للآخرين تشتغل أقوى من الوعود للنفس.",
+    "steps": [
+      "خذ الموعد الحقيقي وارجع للخلف: حدد ٢–٤ محطات بتواريخ.",
+      "اجعل كل محطة تسليماً ملموساً لا إحساساً («أرسلت المخطط»، لا «تقدمت شوي»).",
+      "أخبر شخصاً واحداً عن محطة واحدة واطلب منه يتوقعها («بأرسل لك المسودة الخميس»).",
+      "إذا تحققت محطة: علّمها بشكل مرئي. إذا انزلقت: أعد بناء السقالة بدون جلد ذات — الانزلاق معلومة."
+    ],
+    "try_this_week": "اختر موعداً نهائياً يقترب، ازرع محطتين، وعِد شخصاً بالمحطة الأولى.",
+    "adapt_if": [
+      "ما في أحد تعده: انشر الالتزام في مكان تحس فيه بثقله (مجموعة، تسجيل وصول مع باليو).",
+      "إذا استمرت المحطات تنزلق: هي أكبر من اللازم — قسّمها نصفين.",
+      "إذا رفع الضغطُ الاجتماعي قلقَك: أبقِ المحطة اجتماعية لكن ليّن الصياغة («أستهدف الخميس»)."
+    ]
+  }
+}

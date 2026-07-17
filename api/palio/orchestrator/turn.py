@@ -15,7 +15,7 @@ from dataclasses import dataclass, field
 import structlog
 from sqlalchemy.orm import Session
 
-from palio.agents import companion
+from palio.agents import coach, companion
 from palio.audit.events import record_safety_event
 from palio.db.models import (
     AgentRole,
@@ -133,19 +133,35 @@ def process_turn(db: Session, *, user: User, chat: ChatSession, text: str) -> Tu
         queue.enqueue(db, "case_review", {"user_id": str(user.id), "trigger": "l2_event"})
         ui_action = "show_resources"
 
-    # 5) Route to the primary role (companion until later phases land).
+    # 5) Route to the primary role. Coach suppression (A5 charter): a user
+    #    flagged L1–L2 this turn gets the companion, never productivity push.
     role = router.route(text, user_id=user.id)
+    if role == router.Role.coach and pre.level in (RiskLevel.l1, RiskLevel.l2):
+        role = router.Role.companion
+        record_safety_event(
+            subject_id=user.id,
+            session_id=chat.id,
+            event_type="coach_suppressed",
+            risk_level=pre.level,
+            detail={},
+        )
+
+    agents = {
+        router.Role.companion: (companion.generate, companion.rewrite, AgentRole.companion),
+        router.Role.coach: (coach.generate, coach.rewrite, AgentRole.coach),
+    }
+    generate_fn, rewrite_fn, agent_role = agents.get(role, agents[router.Role.companion])
 
     # 6) Generate + 7) post-pass enforce (pass / rewrite-once / fallback).
     locale = _locale(user)
     try:
-        draft = companion.generate(db, user=user, chat=chat, user_text=text, risk_level=pre.level)
+        draft = generate_fn(db, user=user, chat=chat, user_text=text, risk_level=pre.level)
         final, post = sentinel.enforce(
             draft,
             locale=locale,
             user_id=user.id,
             session_id=chat.id,
-            rewrite_fn=lambda d, v: companion.rewrite(d, v, user_id=user.id),
+            rewrite_fn=lambda d, v: rewrite_fn(d, v, user_id=user.id),
         )
         violations = post.violations
     except gateway.BudgetExceeded:
@@ -154,11 +170,11 @@ def process_turn(db: Session, *, user: User, chat: ChatSession, text: str) -> Tu
         log.error("turn_generation_failed", error=str(exc), agent=role.value)
         final, violations = BUSY_FALLBACK.get(locale, BUSY_FALLBACK["en"]), []
 
-    _persist(db, chat, user, MessageRole.assistant, final, pre.level, AgentRole.companion)
+    _persist(db, chat, user, MessageRole.assistant, final, pre.level, agent_role)
     return TurnResult(
         reply=final,
         risk_level=pre.level,
-        agent_role=AgentRole.companion,
+        agent_role=agent_role,
         ui_action=ui_action,
         violations=violations,
     )

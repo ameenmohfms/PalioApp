@@ -1,0 +1,38 @@
+{
+  "key": "environment_design",
+  "category": "focus",
+  "requires_clinical_signoff": true,
+  "source_basis": "Stimulus-control / EF coaching practice; evidence-informed.",
+  "en": {
+    "title": "Design the room, not the willpower",
+    "summary": "Attention follows the path of least friction. Add friction to distractions and remove friction from the task, and the environment starts working for you instead of against you.",
+    "steps": [
+      "Pick your #1 distraction. Add two steps of friction to it (phone in another room, app signed out).",
+      "Remove two steps from the task (document already open, materials laid out the night before).",
+      "Give the task a dedicated spot — even one chair 'that is only for study'.",
+      "Reset the environment at the end of each session so tomorrow starts frictionless."
+    ],
+    "try_this_week": "Every focus session: phone physically out of reach, task pre-opened before you sit down.",
+    "adapt_if": [
+      "Distraction migrates (new app, new tab): apply the same two-step friction to the newcomer.",
+      "No separate space: a specific chair direction or a desk mat can mark the 'task spot'.",
+      "Friction feels punishing: reframe — you're protecting the future you, not restricting yourself."
+    ]
+  },
+  "ar": {
+    "title": "صمّم المكان لا الإرادة",
+    "summary": "الانتباه يمشي في طريق أقل مقاومة. زد الاحتكاك أمام المشتتات وقلّله أمام المهمة، وسيبدأ المكان يشتغل معك بدل ما يشتغل ضدك.",
+    "steps": [
+      "حدد مشتتك الأول. أضف خطوتين من العناء للوصول له (الجوال في غرفة ثانية، تسجيل خروج من التطبيق).",
+      "احذف خطوتين من طريق المهمة (الملف مفتوح مسبقاً، الأدوات جاهزة من الليل).",
+      "أعطِ المهمة مكاناً خاصاً — حتى لو كرسي واحد «للمذاكرة فقط».",
+      "أعد ترتيب المكان نهاية كل جلسة حتى يبدأ الغد بلا احتكاك."
+    ],
+    "try_this_week": "في كل جلسة تركيز: الجوال بعيد عن اليد فعلياً، والمهمة مفتوحة قبل ما تجلس.",
+    "adapt_if": [
+      "إذا انتقل التشتت (تطبيق جديد، تبويب جديد): طبّق نفس خطوتي الاحتكاك على الجديد.",
+      "ما عندك مساحة مستقلة: اتجاه كرسي معيّن أو مفرش مكتب يكفي لتحديد «مكان المهمة».",
+      "إذا حسيت الاحتكاك عقاباً: أعد الصياغة — أنت تحمي نفسك المستقبلية، لا تقيّد نفسك."
+    ]
+  }
+}

@@ -97,13 +97,22 @@ export default function Chat() {
     >
       <View style={styles.header}>
         <Text style={styles.headerTitle}>{t("app.name")}</Text>
-        <Pressable
-          accessibilityRole="button"
-          onPress={() => router.push("/screening")}
-          style={styles.headerLink}
-        >
-          <Text style={styles.headerLinkText}>{t("screening.openList")}</Text>
-        </Pressable>
+        <View style={styles.headerLinks}>
+          <Pressable
+            accessibilityRole="button"
+            onPress={() => router.push("/plan")}
+            style={styles.headerLink}
+          >
+            <Text style={styles.headerLinkText}>{t("plan.openPlan")}</Text>
+          </Pressable>
+          <Pressable
+            accessibilityRole="button"
+            onPress={() => router.push("/screening")}
+            style={styles.headerLink}
+          >
+            <Text style={styles.headerLinkText}>{t("screening.openList")}</Text>
+          </Pressable>
+        </View>
       </View>
       {showResources && (
         <Pressable
@@ -171,6 +180,7 @@ const styles = StyleSheet.create({
     borderBottomColor: colors.border,
   },
   headerTitle: { fontSize: 18, fontWeight: "600", color: colors.textPrimary },
+  headerLinks: { flexDirection: "row", gap: spacing.sm },
   headerLink: { padding: spacing.xs },
   headerLinkText: { fontSize: 15, color: colors.accent, fontWeight: "600" },
   resourcesBanner: {

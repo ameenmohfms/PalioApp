@@ -26,7 +26,7 @@ _JSON_RE = re.compile(r'\{[^{}]*"role"[^{}]*\}')
 
 # Roles whose agents exist yet. Later phases extend this; routing to an
 # unimplemented role falls back to companion (which explains what it can do).
-IMPLEMENTED: set[Role] = {Role.companion}
+IMPLEMENTED: set[Role] = {Role.companion, Role.coach}
 
 
 def route(

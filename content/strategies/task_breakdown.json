@@ -1,0 +1,38 @@
+{
+  "key": "task_breakdown",
+  "category": "initiation",
+  "requires_clinical_signoff": true,
+  "source_basis": "Executive-function coaching / CBT behavioral activation; evidence-informed practice, not a clinical protocol.",
+  "en": {
+    "title": "Shrink the first step",
+    "summary": "Big tasks stall because the brain sees a wall, not a door. Break the task until the first step is almost embarrassingly small — then only commit to that step.",
+    "steps": [
+      "Write the task as an outcome (\"submit the report\"), then list the physical actions it hides.",
+      "Keep splitting until the first action takes under 10 minutes (\"open the document and write one ugly sentence\").",
+      "Do only that first action. Starting again is allowed, stopping after it is allowed too.",
+      "Cross it off visibly — completion is fuel."
+    ],
+    "try_this_week": "Pick one avoided task and split it until the first step feels too small to fail. Do just that step once a day.",
+    "adapt_if": [
+      "If splitting itself feels heavy: ask Palio to split it with you in chat.",
+      "If steps still stall: make the first step even smaller — opening the file counts.",
+      "If it works: chain two steps, never more than feels light."
+    ]
+  },
+  "ar": {
+    "title": "صغّر أول خطوة",
+    "summary": "المهام الكبيرة تتعطل لأن الدماغ يشوف جداراً لا باباً. قسّم المهمة حتى تصير أول خطوة صغيرة لدرجة تكاد تضحك — ثم التزم بهذه الخطوة فقط.",
+    "steps": [
+      "اكتب المهمة كنتيجة («تسليم التقرير»)، ثم اكتب الأفعال الملموسة المختبئة داخلها.",
+      "استمر بالتقسيم حتى تأخذ أول خطوة أقل من ١٠ دقائق («افتح الملف واكتب جملة واحدة حتى لو ركيكة»).",
+      "نفّذ أول خطوة فقط. مسموح تكمل، ومسموح توقف بعدها.",
+      "اشطبها بشكل مرئي — الإنجاز وقود."
+    ],
+    "try_this_week": "اختر مهمة واحدة تتجنبها وقسّمها حتى تصير أول خطوة أصغر من أن تفشل. نفّذ هذه الخطوة فقط مرة كل يوم.",
+    "adapt_if": [
+      "إذا كان التقسيم نفسه ثقيلاً: اطلب من باليو يقسمها معك في المحادثة.",
+      "إذا استمر التعطل: صغّر الخطوة أكثر — فتح الملف يُحسب إنجازاً.",
+      "إذا نجحت: اربط خطوتين متتاليتين، ولا تزد عمّا يحس خفيفاً."
+    ]
+  }
+}

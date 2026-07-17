@@ -1,0 +1,38 @@
+{
+  "key": "activation_ritual",
+  "category": "initiation",
+  "requires_clinical_signoff": true,
+  "source_basis": "Behavioral activation / habit-cueing practice; evidence-informed.",
+  "en": {
+    "title": "A 3-step start ritual",
+    "summary": "Starting is a skill you can automate. A fixed, tiny ritual — same three actions every time — becomes the brain's green light, so willpower isn't the ignition anymore.",
+    "steps": [
+      "Choose three actions that take under two minutes total (e.g., headphones on → water on desk → timer to 20).",
+      "Always do them in the same order, right before focus work — never for anything else.",
+      "Start working the second the timer starts, even badly. Bad starts count.",
+      "Repeat daily; the ritual gains power with repetition, not intensity."
+    ],
+    "try_this_week": "Define your three actions tonight and run the ritual before every focus session this week.",
+    "adapt_if": [
+      "Ritual gets skipped: shrink it to two actions, or one.",
+      "It stopped working: change one element to re-freshen the cue (new playlist, new spot).",
+      "Strong days: keep the ritual anyway — it's for the weak days."
+    ]
+  },
+  "ar": {
+    "title": "طقس البداية بثلاث خطوات",
+    "summary": "البدء مهارة تُؤتمت. طقس صغير ثابت — نفس الأفعال الثلاثة كل مرة — يصير إشارة الانطلاق للدماغ، فلا تعود الإرادة هي المحرك.",
+    "steps": [
+      "اختر ثلاثة أفعال مجموعها أقل من دقيقتين (مثلاً: سماعات → كوب ماء على الطاولة → مؤقت ٢٠ دقيقة).",
+      "نفّذها دائماً بنفس الترتيب، قبل شغل التركيز مباشرة — ولا تستخدمها لغيره أبداً.",
+      "ابدأ الشغل لحظة انطلاق المؤقت، حتى لو بداية سيئة. البدايات السيئة تُحسب.",
+      "كرر يومياً؛ قوة الطقس من التكرار لا من الحماس."
+    ],
+    "try_this_week": "حدد أفعالك الثلاثة الليلة وطبّق الطقس قبل كل جلسة تركيز هذا الأسبوع.",
+    "adapt_if": [
+      "إذا صرت تتخطى الطقس: قلّصه إلى فعلين، أو فعل واحد.",
+      "إذا فقد مفعوله: غيّر عنصراً واحداً لتجديد الإشارة (قائمة تشغيل جديدة، مكان جديد).",
+      "في الأيام القوية: نفّذه أيضاً — هو موجود لأجل الأيام الضعيفة."
+    ]
+  }
+}

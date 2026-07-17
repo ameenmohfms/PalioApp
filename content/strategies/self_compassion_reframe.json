@@ -1,0 +1,38 @@
+{
+  "key": "self_compassion_reframe",
+  "category": "emotion",
+  "requires_clinical_signoff": true,
+  "source_basis": "ACT/CBT-informed self-compassion practice; evidence-informed.",
+  "en": {
+    "title": "Lapses are data, not verdicts",
+    "summary": "Self-attack after a bad day burns the fuel you need to restart. Treating the lapse as information — what made today hard? — keeps you in the driver's seat.",
+    "steps": [
+      "Notice the attack thought (\"I'm useless, I wasted the whole day\").",
+      "Say what happened in neutral words: \"The task didn't start today.\"",
+      "Ask the data question: what was different about today? (sleep, noise, unclear step, mood)",
+      "Answer as you would to a friend you respect, then pick ONE small adjustment for tomorrow."
+    ],
+    "try_this_week": "After any 'failed' day, write two sentences: what happened (neutral) + one thing to adjust.",
+    "adapt_if": [
+      "Neutral words feel fake: start with \"part of me feels...\" — distance helps.",
+      "The same cause repeats: that's a pattern worth telling Palio about — it goes on the map.",
+      "Self-attack feels overwhelming rather than passing: that's worth raising with a professional."
+    ]
+  },
+  "ar": {
+    "title": "التعثر معلومة، لا حُكم",
+    "summary": "جلد الذات بعد يوم سيئ يحرق الوقود اللي تحتاجه لتبدأ من جديد. التعامل مع التعثر كمعلومة — وش اللي صعّب اليوم؟ — يبقيك ممسكاً بالدفة.",
+    "steps": [
+      "الحظ فكرة الهجوم («أنا فاشل، ضيعت اليوم كله»).",
+      "صف اللي صار بكلمات محايدة: «المهمة ما بدأت اليوم».",
+      "اسأل سؤال المعلومة: وش كان مختلفاً اليوم؟ (النوم، الضجيج، خطوة غير واضحة، المزاج)",
+      "جاوب كما لو كنت تجاوب صديقاً تحترمه، ثم اختر تعديلاً واحداً صغيراً للغد."
+    ],
+    "try_this_week": "بعد أي يوم «فاشل»، اكتب جملتين: وش صار (بحياد) + شيء واحد تعدّله.",
+    "adapt_if": [
+      "إذا حسيت الكلمات المحايدة مصطنعة: ابدأ بـ«جزء مني يحس…» — المسافة تساعد.",
+      "إذا تكرر نفس السبب: هذا نمط يستاهل تخبر باليو عنه — مكانه خريطة الأنماط.",
+      "إذا كان جلد الذات غامراً ولا يمر: هذا شيء يستاهل تطرحه مع مختص."
+    ]
+  }
+}

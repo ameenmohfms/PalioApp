@@ -1,0 +1,38 @@
+{
+  "key": "transition_bridges",
+  "category": "time",
+  "requires_clinical_signoff": true,
+  "source_basis": "EF coaching practice for task-switching costs; evidence-informed.",
+  "en": {
+    "title": "Bridges between tasks",
+    "summary": "Getting stuck BETWEEN things — after a meeting, after lunch, after one more video — costs more time than the tasks themselves. A bridge is a tiny fixed sequence that carries you across.",
+    "steps": [
+      "Spot your worst transition of the day (e.g., lunch → afternoon work).",
+      "Build a 3-minute bridge for it: stand → water → open tomorrow-you's note that says what's next.",
+      "The bridge starts at a trigger you can't miss (plates in sink, meeting app closes).",
+      "End every work session by writing the 'what's next' note — it's the far end of tomorrow's bridge."
+    ],
+    "try_this_week": "Install one bridge on your single worst transition and run it daily.",
+    "adapt_if": [
+      "You blow past the trigger: make it physical — a sticky note on the actual sink.",
+      "Three minutes stretches to thirty: put a timer on the bridge itself.",
+      "The note is vague: it must name a concrete first action, not a topic."
+    ]
+  },
+  "ar": {
+    "title": "جسور بين المهام",
+    "summary": "التعلّق بين الأشياء — بعد الاجتماع، بعد الغداء، بعد «آخر مقطع» — يكلف وقتاً أكثر من المهام نفسها. الجسر تسلسل صغير ثابت يعبّرك للضفة الثانية.",
+    "steps": [
+      "حدد أسوأ انتقال في يومك (مثلاً: الغداء ← شغل العصر).",
+      "ابنِ له جسراً من ٣ دقائق: وقوف ← ماء ← فتح ورقة «التالي» اللي كتبتها لنفسك.",
+      "الجسر يبدأ عند إشارة لا يمكن تفويتها (الصحون في المغسلة، إغلاق تطبيق الاجتماع).",
+      "اختم كل جلسة شغل بكتابة ورقة «التالي» — هي الطرف البعيد لجسر الغد."
+    ],
+    "try_this_week": "ركّب جسراً واحداً على أسوأ انتقال عندك وطبّقه يومياً.",
+    "adapt_if": [
+      "إذا تجاوزت الإشارة: اجعلها مادية — ورقة لاصقة على المغسلة نفسها.",
+      "إذا تمددت الثلاث دقائق لثلاثين: ضع مؤقتاً على الجسر نفسه.",
+      "إذا كانت ورقة «التالي» عامة: لازم تسمّي فعلاً أول ملموساً، لا موضوعاً."
+    ]
+  }
+}

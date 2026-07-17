@@ -1,0 +1,38 @@
+{
+  "key": "interest_anchoring",
+  "category": "focus",
+  "requires_clinical_signoff": true,
+  "source_basis": "Strengths-based ADHD coaching (interest-driven attention); evidence-informed.",
+  "en": {
+    "title": "Anchor boring tasks to interest",
+    "summary": "ADHD attention is interest-driven, not importance-driven. Instead of forcing importance to feel interesting, attach the boring task to something that already pulls you: novelty, competition, music, or curiosity.",
+    "steps": [
+      "Name the boring task and notice what it lacks: urgency, novelty, challenge, or meaning.",
+      "Pick one anchor: a race against a timer, a new location, a themed playlist, or a curiosity question (\"how fast CAN I do this?\").",
+      "Bind them: the anchor happens ONLY during that task.",
+      "Rotate anchors when one wears out — wearing out is normal, not failure."
+    ],
+    "try_this_week": "Choose your most boring recurring task and give it one exclusive anchor for the week.",
+    "adapt_if": [
+      "The anchor distracts more than it pulls (lyrics, competitive stress): switch anchor type.",
+      "Nothing feels interesting: shrink the task first (see: shrink the first step), then anchor.",
+      "It works: protect the exclusivity — anchors leak power when used everywhere."
+    ]
+  },
+  "ar": {
+    "title": "اربط الممل بالمشوّق",
+    "summary": "انتباه التشتت يمشي وراء الاهتمام لا وراء الأهمية. بدل ما تجبر «المهم» يصير ممتعاً، اربط المهمة المملة بشيء يشدّك أصلاً: جِدّة، تحدٍّ، موسيقى، أو فضول.",
+    "steps": [
+      "سمِّ المهمة المملة ولاحظ وش ناقصها: استعجال، جِدّة، تحدٍّ، أو معنى.",
+      "اختر مرساة واحدة: سباق مع مؤقت، مكان جديد، قائمة تشغيل خاصة، أو سؤال فضول («كم أسرع وقت أقدر أخلصها فيه؟»).",
+      "اربطهما: المرساة تحدث فقط أثناء هذه المهمة.",
+      "بدّل المرساة إذا بهتت — البهتان طبيعي، ليس فشلاً."
+    ],
+    "try_this_week": "اختر أكثر مهامك المتكررة مللاً وأعطها مرساة حصرية واحدة طوال الأسبوع.",
+    "adapt_if": [
+      "إذا شتّتت المرساة أكثر مما شدّت (كلمات الأغاني، توتر المنافسة): غيّر نوع المرساة.",
+      "إذا ما في شيء يشدّك أصلاً: صغّر المهمة أولاً (انظر: صغّر أول خطوة) ثم اربط.",
+      "إذا نجحت: احمِ الحصرية — المرساة تفقد قوتها إذا استخدمتها في كل شيء."
+    ]
+  }
+}

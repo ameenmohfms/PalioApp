@@ -1,0 +1,38 @@
+{
+  "key": "body_doubling",
+  "category": "initiation",
+  "requires_clinical_signoff": true,
+  "source_basis": "Widely used ADHD coaching technique; evidence-informed practice.",
+  "en": {
+    "title": "Body doubling",
+    "summary": "Working near another person — physically or on a call — makes starting and staying with a task dramatically easier for many ADHD brains. The other person doesn't help; they just exist nearby.",
+    "steps": [
+      "Pick a task you keep postponing.",
+      "Arrange a 'double': a friend on a silent video call, a family member in the room, or a busy café.",
+      "Say out loud (or type) what you'll do: \"For the next 30 minutes I'm drafting the email.\"",
+      "Work. When attention drifts, the other person's presence is the anchor back."
+    ],
+    "try_this_week": "Schedule two 30-minute body-doubling blocks with someone you're comfortable with.",
+    "adapt_if": [
+      "No one available: try a public 'study with me' livestream or a library seat.",
+      "Presence feels like pressure: use a shorter block (15 minutes) and no shared goal.",
+      "It works well: make it a recurring appointment — same person, same time."
+    ]
+  },
+  "ar": {
+    "title": "الرفيق الصامت (Body Doubling)",
+    "summary": "الشغل قرب شخص آخر — حضورياً أو عبر مكالمة — يسهّل البدء والاستمرار بشكل كبير لكثير من أصحاب التشتت. الشخص الآخر لا يساعدك؛ مجرد وجوده هو المطلوب.",
+    "steps": [
+      "اختر مهمة تؤجلها باستمرار.",
+      "دبّر «رفيقاً»: صديق على مكالمة فيديو صامتة، شخص من العائلة في نفس الغرفة، أو مقهى فيه حركة.",
+      "قل بصوت مسموع (أو اكتب) ما ستفعله: «الـ٣٠ دقيقة الجاية بكتب مسودة الإيميل».",
+      "اشتغل. إذا شرد ذهنك، وجود الشخص الآخر هو نقطة الرجوع."
+    ],
+    "try_this_week": "حدد موعدين هذا الأسبوع، ٣٠ دقيقة لكل واحد، مع شخص مرتاح له.",
+    "adapt_if": [
+      "ما في أحد متاح: جرب بث «ادرس معي» عام أو مقعداً في مكتبة.",
+      "إذا حسيت الوجود ضغطاً: قصّر المدة (١٥ دقيقة) وبدون هدف مشترك.",
+      "إذا نجحت: خلّها موعداً ثابتاً — نفس الشخص، نفس الوقت."
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "key": "pomodoro_flex",
+  "category": "focus",
+  "requires_clinical_signoff": true,
+  "source_basis": "Pomodoro-derived focus practice adapted for variable attention; evidence-informed.",
+  "en": {
+    "title": "Flexible focus sprints",
+    "summary": "Fixed 25-minute pomodoros fight your rhythm; flexible sprints ride it. Pick the sprint length that matches today's brain — 15 on foggy days, 40 when you're in flow — and always take the movement break.",
+    "steps": [
+      "Before starting, rate today's focus: low → 15 min, normal → 25, strong → 40.",
+      "Set a visible timer and work on ONE task until it rings.",
+      "Break = stand up and move (2–5 min). Scrolling is not a break for attention.",
+      "After each sprint, note: continue, switch, or stop. Three sprints is a good day."
+    ],
+    "try_this_week": "Two sprints a day, length chosen honestly each morning, movement breaks non-negotiable.",
+    "adapt_if": [
+      "The ring breaks your flow: let a sprint run over — the timer serves you, not the reverse.",
+      "You can't start the first sprint: pair it with the activation ritual.",
+      "Breaks swallow the day: put a timer on the break too."
+    ]
+  },
+  "ar": {
+    "title": "جولات تركيز مرنة",
+    "summary": "بومودورو الثابت (٢٥ دقيقة) يعاند إيقاعك؛ الجولات المرنة تركب معه. اختر طول الجولة على قد دماغ اليوم — ١٥ دقيقة في أيام الضباب، ٤٠ لما تكون في المزاج — ولا تتنازل عن استراحة الحركة.",
+    "steps": [
+      "قبل البدء، قيّم تركيز اليوم: ضعيف ← ١٥ دقيقة، عادي ← ٢٥، قوي ← ٤٠.",
+      "شغّل مؤقتاً مرئياً واشتغل على مهمة واحدة حتى يرن.",
+      "الاستراحة = وقوف وحركة (٢–٥ دقائق). التصفح ليس استراحة للانتباه.",
+      "بعد كل جولة، قرر: أكمل، أبدّل، أو أوقف. ثلاث جولات = يوم ممتاز."
+    ],
+    "try_this_week": "جولتان يومياً، تختار طولهما بصدق كل صباح، واستراحة الحركة غير قابلة للتفاوض.",
+    "adapt_if": [
+      "إذا كان الرنين يقطع اندماجك: خلّ الجولة تمتد — المؤقت يخدمك لا العكس.",
+      "إذا ما قدرت تبدأ الجولة الأولى: اربطها بطقس البداية.",
+      "إذا ابتلعت الاستراحات اليوم: ضع مؤقتاً على الاستراحة أيضاً."
+    ]
+  }
+}

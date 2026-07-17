@@ -1,0 +1,38 @@
+{
+  "key": "external_memory",
+  "category": "organization",
+  "requires_clinical_signoff": true,
+  "source_basis": "EF coaching externalization practice; evidence-informed.",
+  "en": {
+    "title": "One external memory",
+    "summary": "A working memory that drops things isn't a character flaw — it's a reason to build memory outside the head: one inbox for everything, reviewed once a day.",
+    "steps": [
+      "Choose ONE capture place (a notes app, a pocket notebook) — the deciding factor is 'always within reach'.",
+      "Everything goes there the moment it appears: tasks, ideas, appointments, 'remember to reply'.",
+      "Once a day, at a fixed anchor (after a meal works), spend 5 minutes sorting it: calendar, task list, or delete.",
+      "Never keep a second inbox. Duplicates kill trust."
+    ],
+    "try_this_week": "Capture everything in one place for five days and do the daily 5-minute sort.",
+    "adapt_if": [
+      "You forget to capture: put the capture app on the first home screen / carry the notebook visibly.",
+      "The daily sort gets skipped: attach it to an existing habit you never miss.",
+      "Voice is easier than typing: voice memos count, as long as they land in the same inbox."
+    ]
+  },
+  "ar": {
+    "title": "ذاكرة خارجية واحدة",
+    "summary": "الذاكرة العاملة اللي توقع الأشياء ليست عيباً في الشخصية — هي سبب لبناء ذاكرة خارج الرأس: صندوق واحد لكل شيء، يُراجع مرة يومياً.",
+    "steps": [
+      "اختر مكان تدوين واحداً (تطبيق ملاحظات، دفتر جيب) — المعيار الحاسم: «دائماً في متناول اليد».",
+      "كل شيء يروح له لحظة ظهوره: مهام، أفكار، مواعيد، «لازم أرد على فلان».",
+      "مرة يومياً، عند مرساة ثابتة (بعد وجبة مثلاً)، خمس دقائق فرز: تقويم، قائمة مهام، أو حذف.",
+      "لا تفتح صندوقاً ثانياً أبداً. التكرار يقتل الثقة."
+    ],
+    "try_this_week": "دوّن كل شيء في مكان واحد لخمسة أيام ونفّذ فرز الخمس دقائق اليومي.",
+    "adapt_if": [
+      "إذا نسيت التدوين نفسه: ضع تطبيق التدوين في أول شاشة / احمل الدفتر بشكل مرئي.",
+      "إذا انقطع الفرز اليومي: اربطه بعادة قائمة لا تفوتها أبداً.",
+      "إذا كان الصوت أسهل من الكتابة: الملاحظات الصوتية تُحسب، بشرط أن تصب في نفس الصندوق."
+    ]
+  }
+}

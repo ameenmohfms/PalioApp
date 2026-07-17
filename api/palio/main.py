@@ -13,6 +13,7 @@ from fastapi import FastAPI
 from palio.config import Settings, get_settings
 from palio.routers import auth as auth_router
 from palio.routers import chat as chat_router
+from palio.routers import coaching as coaching_router
 from palio.routers import crisis as crisis_router
 from palio.routers import health
 from palio.routers import screeners as screeners_router
@@ -75,6 +76,7 @@ def create_app() -> FastAPI:
     app.include_router(auth_router.router)
     app.include_router(chat_router.router)
     app.include_router(screeners_router.router)
+    app.include_router(coaching_router.router)
     return app
 
 

@@ -1,0 +1,38 @@
+{
+  "key": "two_minute_rule",
+  "category": "organization",
+  "requires_clinical_signoff": true,
+  "source_basis": "GTD-derived organization practice; evidence-informed.",
+  "en": {
+    "title": "The two-minute sort",
+    "summary": "Small tasks pile into an anxious fog. One rule cuts the fog: if it takes under two minutes, do it now; otherwise capture it in one trusted place — never in your head.",
+    "steps": [
+      "When a small task appears, ask: under two minutes?",
+      "Yes → do it immediately, then return to what you were doing.",
+      "No → write it in your ONE capture place (a single note or list, not five).",
+      "That's the whole rule. The capture list gets its own review moment (see: external memory)."
+    ],
+    "try_this_week": "Run the two-minute sort on every incoming small task for three days.",
+    "adapt_if": [
+      "Two-minute tasks derail you from deep work: during focus blocks, capture everything instead.",
+      "You distrust the list: review it at a fixed daily moment so the brain learns it's safe to offload.",
+      "Everything feels like two minutes: time one honestly — calibration is part of the practice."
+    ]
+  },
+  "ar": {
+    "title": "فرز الدقيقتين",
+    "summary": "المهام الصغيرة تتراكم إلى ضباب مقلق. قاعدة واحدة تقطع الضباب: إذا كانت أقل من دقيقتين نفّذها الآن؛ غير كذا دوّنها في مكان واحد موثوق — أبداً ليس في رأسك.",
+    "steps": [
+      "لما تظهر مهمة صغيرة، اسأل: أقل من دقيقتين؟",
+      "نعم ← نفّذها فوراً ثم ارجع لما كنت فيه.",
+      "لا ← اكتبها في مكان التدوين الوحيد (قائمة واحدة، لا خمس).",
+      "هذي كل القاعدة. قائمة التدوين لها لحظة مراجعة خاصة (انظر: الذاكرة الخارجية)."
+    ],
+    "try_this_week": "طبّق فرز الدقيقتين على كل مهمة صغيرة واردة لمدة ثلاثة أيام.",
+    "adapt_if": [
+      "إذا كانت مهام الدقيقتين تكسر تركيزك العميق: أثناء جلسات التركيز دوّن كل شيء بدل التنفيذ.",
+      "إذا ما تثق بالقائمة: راجعها في وقت يومي ثابت حتى يتعلم الدماغ أن التفريغ آمن.",
+      "إذا كان كل شيء «يبدو» دقيقتين: وقّت مهمة بصدق — المعايرة جزء من التمرين."
+    ]
+  }
+}
