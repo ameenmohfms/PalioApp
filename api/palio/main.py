@@ -11,12 +11,14 @@ import structlog
 from fastapi import FastAPI
 
 from palio.config import Settings, get_settings
+from palio.routers import account as account_router
 from palio.routers import auth as auth_router
 from palio.routers import chat as chat_router
 from palio.routers import coaching as coaching_router
 from palio.routers import crisis as crisis_router
 from palio.routers import health
 from palio.routers import patterns as patterns_router
+from palio.routers import reports as reports_router
 from palio.routers import screeners as screeners_router
 from palio.safety import crisis_config
 
@@ -80,6 +82,8 @@ def create_app() -> FastAPI:
     app.include_router(coaching_router.router)
     app.include_router(patterns_router.router)
     app.include_router(patterns_router.sessions_router)
+    app.include_router(reports_router.router)
+    app.include_router(account_router.router)
     return app
 
 

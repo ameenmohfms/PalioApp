@@ -27,6 +27,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v4
+      - name: System deps (WeasyPrint)
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends
+          libpango-1.0-0 libpangoft2-1.0-0 libharfbuzz0b fonts-freefont-ttf
       - name: Install
         run: |
           uv venv --python 3.12 .venv

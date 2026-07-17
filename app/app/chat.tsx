@@ -140,6 +140,20 @@ export default function Chat() {
           >
             <Text style={styles.headerLinkText}>{t("screening.openList")}</Text>
           </Pressable>
+          <Pressable
+            accessibilityRole="button"
+            onPress={() => router.push("/care")}
+            style={styles.headerLink}
+          >
+            <Text style={styles.headerLinkText}>{t("care.openCare")}</Text>
+          </Pressable>
+          <Pressable
+            accessibilityRole="button"
+            onPress={() => router.push("/settings")}
+            style={styles.headerLink}
+          >
+            <Text style={styles.headerLinkText}>⚙</Text>
+          </Pressable>
         </View>
       </View>
       <View style={styles.memoryRow}>

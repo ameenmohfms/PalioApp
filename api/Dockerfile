@@ -2,6 +2,12 @@ FROM python:3.12-slim
 
 WORKDIR /srv/api
 
+# WeasyPrint native deps + proper Arabic typography for reports (§9).
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        libpango-1.0-0 libpangoft2-1.0-0 libharfbuzz0b libffi8 \
+        fonts-noto-core fonts-noto-ui-core \
+    && rm -rf /var/lib/apt/lists/*
+
 RUN pip install --no-cache-dir uv
 
 COPY pyproject.toml ./

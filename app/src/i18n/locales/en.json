@@ -18,6 +18,31 @@
     "sendError": "Couldn't send. Please try again.",
     "resourcesBanner": "If things feel heavy right now, real support is available — tap here to see support lines."
   },
+  "care": {
+    "title": "Report & referrals",
+    "openCare": "Report",
+    "reportSection": "Summary for your clinician",
+    "reportNote": "Includes only what you confirmed yourself plus screening scores. Generating it means you agree to share it with whom you choose.",
+    "medsPlaceholder": "Your current medications (optional — included exactly as typed, labeled \"user-reported\")",
+    "generate": "Generate report (PDF)",
+    "openReport": "Open report",
+    "referralSection": "Referral directory",
+    "notEndorsements": "These are operator-verified options — not recommendations or endorsements.",
+    "cityPlaceholder": "Your city (to show nearby options)",
+    "applyCity": "Apply",
+    "telehealth": "Telehealth",
+    "noReferrals": "The directory is filled by the operator after verification — nothing to show yet."
+  },
+  "settings": {
+    "title": "Settings",
+    "openSettings": "Settings",
+    "export": "Export all my data (JSON)",
+    "deleteTitle": "Delete account permanently",
+    "deleteConfirm": "Everything will be permanently deleted: chats, patterns, results, plan. This cannot be undone.",
+    "deleteDo": "Delete permanently",
+    "cancel": "Cancel",
+    "deleteNote": "Deletion is immediate and final. Only anonymized safety records remain, per the retention policy."
+  },
   "patterns": {
     "title": "My patterns & progress",
     "openPatterns": "Patterns",
