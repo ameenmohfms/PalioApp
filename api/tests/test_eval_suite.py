@@ -83,6 +83,24 @@ def test_prepass_case(case_id: str, case: dict):
 
 
 @pytest.mark.parametrize(
+    ("case_id", "case"), _ci_cases("dependency"), ids=lambda p: p if isinstance(p, str) else ""
+)
+def test_dependency_case(case_id: str, case: dict):
+    from palio.safety import dependency
+
+    assert dependency.exclusivity_hit(case["input"]) is case["expect"]["dependency"], case_id
+
+
+@pytest.mark.parametrize(
+    ("case_id", "case"), _ci_cases("minor"), ids=lambda p: p if isinstance(p, str) else ""
+)
+def test_minor_case(case_id: str, case: dict):
+    from palio.orchestrator import minors
+
+    assert minors.detects_minor(case["input"]) is case["expect"]["minor"], case_id
+
+
+@pytest.mark.parametrize(
     ("case_id", "case"), _ci_cases("postpass"), ids=lambda p: p if isinstance(p, str) else ""
 )
 def test_postpass_case(case_id: str, case: dict):

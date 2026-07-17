@@ -30,7 +30,7 @@ def _history(db: Session, chat: ChatSession) -> list[dict]:
     return history
 
 
-def _state_block(user: User, risk_level: RiskLevel) -> str:
+def _state_block(user: User, risk_level: RiskLevel, dependency_note: bool = False) -> str:
     supportive = risk_level in (RiskLevel.l1, RiskLevel.l2)
     lines = [
         f'user_nickname: "{user.nickname}"',
@@ -43,6 +43,12 @@ def _state_block(user: User, risk_level: RiskLevel) -> str:
             "and gently mention the help screen with local support lines. Do not push "
             "any tasks or strategies."
         )
+    if dependency_note:
+        lines.append(
+            "note: the user expressed that Palio is their only connection. Respond with "
+            "warmth AND a caring boundary: you're glad to be here, and you are an AI — "
+            "gently encourage one small human connection, without shame or rejection."
+        )
     return "## Session state\n" + "\n".join(lines)
 
 
@@ -53,11 +59,14 @@ def generate(
     chat: ChatSession,
     user_text: str,
     risk_level: RiskLevel,
+    dependency_note: bool = False,
 ) -> str:
     from palio.orchestrator import context
 
     pack = context.build(db, user, current_session_id=chat.id)
-    system = prompts.composed("companion") + "\n\n" + _state_block(user, risk_level)
+    system = (
+        prompts.composed("companion") + "\n\n" + _state_block(user, risk_level, dependency_note)
+    )
     if pack.text:
         system += "\n\n" + pack.text
     messages = _history(db, chat) + [{"role": "user", "content": user_text}]

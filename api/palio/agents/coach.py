@@ -52,6 +52,7 @@ def generate(
     chat: ChatSession,
     user_text: str,
     risk_level: RiskLevel,
+    dependency_note: bool = False,
 ) -> str:
     from palio.agents.companion import _history, _state_block  # shared helpers
     from palio.orchestrator import context
@@ -60,7 +61,7 @@ def generate(
     system = (
         prompts.composed("coach")
         + "\n\n"
-        + _state_block(user, risk_level)
+        + _state_block(user, risk_level, dependency_note)
         + "\n\n"
         + _context_block(db, user)
     )

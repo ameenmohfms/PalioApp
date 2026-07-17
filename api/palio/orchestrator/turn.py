@@ -28,7 +28,7 @@ from palio.db.models import (
 from palio.jobs import queue
 from palio.llm import gateway
 from palio.orchestrator import minors, router
-from palio.safety import crisis, sentinel
+from palio.safety import crisis, dependency, sentinel
 
 log = structlog.get_logger()
 
@@ -126,12 +126,24 @@ def process_turn(db: Session, *, user: User, chat: ChatSession, text: str) -> Tu
         _persist(db, chat, user, MessageRole.assistant, script, pre.level, AgentRole.companion)
         return TurnResult(reply=script, risk_level=pre.level, agent_role=AgentRole.companion)
 
-    # 4) L2 check-in protocol: schedule Case Review (handler lands Phase 7;
-    #    the job row is the durable signal), surface the resources screen.
+    # 4) L2 check-in protocol: schedule Case Review, surface the resources screen.
     ui_action = None
     if pre.level == RiskLevel.l2:
         queue.enqueue(db, "case_review", {"user_id": str(user.id), "trigger": "l2_event"})
         ui_action = "show_resources"
+
+    # 4b) Dependency signal (A8 engagement health): log it and have the
+    #     companion respond with a caring boundary + human-connection nudge.
+    dependency_note = False
+    if dependency.exclusivity_hit(text):
+        dependency_note = True
+        record_safety_event(
+            subject_id=user.id,
+            session_id=chat.id,
+            event_type="dependency_signal",
+            risk_level=pre.level,
+            detail={"kind": "exclusivity_language"},
+        )
 
     # 5) Route to the primary role. Coach suppression (A5 charter): a user
     #    flagged L1–L2 this turn gets the companion, never productivity push.
@@ -155,7 +167,14 @@ def process_turn(db: Session, *, user: User, chat: ChatSession, text: str) -> Tu
     # 6) Generate + 7) post-pass enforce (pass / rewrite-once / fallback).
     locale = _locale(user)
     try:
-        draft = generate_fn(db, user=user, chat=chat, user_text=text, risk_level=pre.level)
+        draft = generate_fn(
+            db,
+            user=user,
+            chat=chat,
+            user_text=text,
+            risk_level=pre.level,
+            dependency_note=dependency_note,
+        )
         final, post = sentinel.enforce(
             draft,
             locale=locale,

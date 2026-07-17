@@ -176,6 +176,17 @@ def complete(result_id: str, user: UserDep, db: DbDep) -> FormulationOut:
     result.taken_at = datetime.now(UTC)
     db.flush()
 
+    # Post-intake Case Review (A8): first completed screening triggers one.
+    prior = db.execute(
+        select(ScreenerResult).where(
+            ScreenerResult.user_id == user.id,
+            ScreenerResult.taken_at.isnot(None),
+            ScreenerResult.id != result.id,
+        )
+    ).first()
+    if prior is None:
+        queue.enqueue(db, "case_review", {"user_id": str(user.id), "trigger": "post_intake"})
+
     payload = formulation.build(inst.definition, answers, outcome, locale=user.locale.value)
     return FormulationOut(
         reported_summary=payload.reported_summary,

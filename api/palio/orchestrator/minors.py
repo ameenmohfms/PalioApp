@@ -10,7 +10,7 @@ from palio.safety.rules import normalize
 # and common phrasings. Deliberately narrow: only first-person age claims.
 _AR_DIGITS = str.maketrans("٠١٢٣٤٥٦٧٨٩", "0123456789")
 
-_EN_AGE = re.compile(r"\bi(?:'m| am)\s+(\d{1,2})(?:\s*years?\s*old|\s*yo\b|\s*,|\s*$|\s+and\b)")
+_EN_AGE = re.compile(r"\bi(?:'?m| am)\s+(\d{1,2})(?:\s*years?\s*old|\s*yo\b|\s*,|\s*$|\s+and\b)")
 _EN_AGE2 = re.compile(r"\b(\d{1,2})\s*years?\s*old\b.{0,12}\b(?:me|i am|i'm)\b")
 _AR_AGE = re.compile(r"عمري\s*(\d{1,2})|انا\s*عندي\s*(\d{1,2})\s*سنه|عندي\s*(\d{1,2})\s*سنه")
 _EN_SCHOOL = re.compile(r"\bi(?:'m| am)\s+(?:in\s+)?(?:middle\s+school|9th\s+grade|10th\s+grade)\b")

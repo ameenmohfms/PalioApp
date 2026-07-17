@@ -71,6 +71,24 @@ npm start                            # Expo dev server (device/simulator)
   delete); `safety_events` / `audit_log` — 24 months, opaque subject IDs, PII-scrubbed at
   write time; job rows — 90 days. Operator policy may tighten these.
 
+## Evals & safety testing
+
+- CI-blocking safety families run inside `api` pytest (`tests/test_eval_suite.py`) with
+  the LLM classifier scripted out — the L3 gate holds on deterministic rules alone.
+- Live families (nuanced classifier cases + full-turn behavioral red-team):
+  `ANTHROPIC_API_KEY=... api/.venv/bin/python evals/runner/run_live.py [--behavioral]`
+- Load test: `python evals/runner/load_test.py --base http://localhost:8000`
+
+## Operator
+
+- Metrics (success metrics only — no engagement metrics by design):
+  `GET /operator/metrics` with `X-Operator-Token` (set `OPERATOR_TOKEN`; endpoint is
+  hidden when unset).
+- Referral seeding: `python -m palio.admin.seed_referrals` (refuses unverified entries).
+- Blocking inputs before beta/production: see `docs/beta_readiness.md` (§16 items).
+
 ## Status
 
-Phase 0 (foundation) — in progress. See `PLAN.md` for the phase gates.
+Phases 0–7 built. Beta-blocked on the §16 operator inputs (crisis lines, verified Arabic
+instruments, clinical sign-off, referral data, counsel review, store review) — see
+`docs/beta_readiness.md` and `PLAN.md` for the phase gates.

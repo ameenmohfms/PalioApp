@@ -33,6 +33,9 @@ class Settings(BaseSettings):
 
     palio_daily_token_budget_per_user: int = 200_000
 
+    # Operator metrics endpoint token; endpoint refuses when unset.
+    operator_token: str = ""
+
     # Paths to operator-controlled assets. In Docker these are mounted at
     # /config etc.; running from source they resolve to the repo directories.
     config_dir: str = ""
